@@ -20,13 +20,13 @@
             topNumber = 100;
             middleNumber = 0;
         }
-        middleNumber = (topNumber - bottomNumber) / 2;
-        alert(middleNumber);
         let response = prompt("Is it " + middleNumber + "? Answer yes, <, or >");
         if (response == "<") {
             topNumber = middleNumber;        
+            middleNumber = (topNumber - bottomNumber) / 2;
         } else if (response == ">") {
             bottomNumber = middleNumber;
+            middleNumber = ((topNumber - bottomNumber) / 2) + bottomNumber;
         } else if (response == "yes") {
             solved = true;
         } else {
