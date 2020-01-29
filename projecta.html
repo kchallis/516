@@ -17,7 +17,6 @@
         let response = prompt("Is it " + middleNumber + "? Answer yes, <, or >");
         if (response == "<") {   
             topNumber = Math.round(middleNumber); 
-			alert(topNumber);
 			middleNumber = Math.round(topNumber / 2);
         } else if (response == ">") {
             topNumber = Math.round(middleNumber);
