@@ -15,13 +15,13 @@
     solved = false;
     while (!solved) {
         let response = prompt("Is it " + middleNumber + "? Answer yes, <, or >");
-        if (response == "<") {
-            topNumber = Math.round(middleNumber);        
-            middleNumber = Math.round(((topNumber - middleNumber) / 2) + middleNumber);
+        if (response == "<") {   
+            topNumber = Math.round(middleNumber); 
+			alert(topNumber);
+			middleNumber = Math.round(topNumber / 2);
         } else if (response == ">") {
             topNumber = Math.round(middleNumber);
-			alert(bottomNumber);
-            middleNumber = Math.round(((topNumber - bottomNumber) / 2) + bottomNumber);
+			middleNumber = Math.round(((topNumber - bottomNumber) / 2) + bottomNumber);
         } else if (response == "yes") {
             solved = true;
         } else {
