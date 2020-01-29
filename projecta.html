@@ -17,10 +17,10 @@
         let response = prompt("Is it " + middleNumber + "? Answer yes, <, or >");
         if (response == "<") {
             topNumber = Math.round(middleNumber);        
-            middleNumber = Math.round((topNumber - bottomNumber)) / 2;
+            middleNumber = Math.round((topNumber - bottomNumber) / 2);
         } else if (response == ">") {
             bottomNumber = Math.round(middleNumber);
-            middleNumber = Math.round(((topNumber - bottomNumber)) / 2) + Math.round(bottomNumber);
+            middleNumber = Math.round(((topNumber - bottomNumber)) / 2 + Math.round(bottomNumber));
         } else if (response == "yes") {
             solved = true;
         } else {
