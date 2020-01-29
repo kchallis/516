@@ -16,11 +16,11 @@
     while (!solved) {
         let response = prompt("Is it " + middleNumber + "? Answer yes, <, or >");
         if (response == "<") {
-            topNumber = middleNumber;        
-            middleNumber = (topNumber - bottomNumber) / 2;
+            topNumber = Math.round(middleNumber);        
+            middleNumber = Math.round((topNumber - bottomNumber)) / 2;
         } else if (response == ">") {
-            bottomNumber = middleNumber;
-            middleNumber = ((topNumber - bottomNumber) / 2) + bottomNumber;
+            bottomNumber = Math.round(middleNumber);
+            middleNumber = Math.round(((topNumber - bottomNumber)) / 2) + Math.round(bottomNumber);
         } else if (response == "yes") {
             solved = true;
         } else {
