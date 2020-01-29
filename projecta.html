@@ -20,6 +20,7 @@
             middleNumber = Math.round(((topNumber - middleNumber) / 2) + middleNumber);
         } else if (response == ">") {
             bottomNumber = Math.round(middleNumber);
+			alert(bottomNumber);
             middleNumber = Math.round(((topNumber - bottomNumber) / 2) + bottomNumber);
         } else if (response == "yes") {
             solved = true;
