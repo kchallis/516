@@ -9,10 +9,16 @@ let solved = false;
 
 while (!solved) {
   let response = prompt("Is your number " + middleNumber + "? Answer yes, <, or >");
+  if (response == "<") {
+    topNumber = middleNumber;
+    middleNumber = middleNumber/2;    
+  }
   if (response == "yes") {
     solved = true;
   }
 }
+
+alert("I win! Thanks for playing!");
 
 
 
