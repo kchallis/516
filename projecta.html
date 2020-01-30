@@ -20,6 +20,9 @@
             middleNumber = (topNumber - bottomNumber) / 2;
         } else if (response == ">") {
             bottomNumber = middleNumber;
+            alert(topNumber);
+            alert(bottomNumber);
+            alert(topNumber);
             middleNumber = ((topNumber - bottomNumber) / 2) + bottomNumber;
         } else if (response == "yes") {
             solved = true;
