@@ -15,7 +15,7 @@ while (!solved) {
   }
   else if (response == ">") {
     bottomNumber = Math.round(middleNumber);
-    middleNumber = Math.round((topNumber - middleNumber) / 2 + middleNumber);
+    middleNumber = Math.round(middleNumber / 2 + middleNumber);
   }
   else if (response == "yes") {
     solved = true;
