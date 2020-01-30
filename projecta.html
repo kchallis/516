@@ -1,6 +1,20 @@
 <script type="text/javascript">
 alert("Pick a number between 1 and 100 and I'll guess what it is.");
 
+let topNumber = 100;
+let bottomNumber = 1;
+let middleNumber = 50;
+
+let solved = false;
+
+while !solved {
+  let response = prompt("Is your number " + middleNumber + "? Answer yes, <, or >");
+  if (response == "yes") {
+    solved = true;
+  }
+}
+
+
 
 
 
