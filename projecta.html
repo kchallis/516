@@ -1,70 +1,7 @@
-/* 
-    stuff to probably include in this program:
-    while-loop, binding, string, number, string comparison, condition.
-    
-    Does the Number function have a .isInt builtin? 
-*/ 
+<script type="text/javascript">
+alert("Pick a number between 1 and 100 and I'll guess what it is.");
 
 
-<script>
 
-"use strict"; 
 
-    let bottomNumber = 1;
-    let topNumber = 100;
-    let middleNumber = 50;
-    alert("Pick a number between 1 and 100, and I'll try to guess it.");
-    
-    solved = false;
-    while (!solved) {
-        let response = prompt("Is it " + middleNumber + "? Answer yes, <, or >");
-        if (response == "<") {   
-            topNumber = Math.round(middleNumber); 
-			middleNumber = Math.round(topNumber / 2);
-        } else if (response == ">") {
-            bottomNumber = Math.round(middleNumber);
-			middleNumber = Math.round(((topNumber - bottomNumber) / 2) + bottomNumber);
-        } else if (response == "yes") {
-            solved = true;
-        } else {
-            alert("Oh. I guess you don't want to play, do you.");
-        }
-        /*
-        What if the player picks an invalid number or lies?
-        
-        if (abs(topNumber - bottomNumber) < 1) {
-            alert("You either lied, cheated, or are incredibly stupid. Please start again. Pick a number between 1 and 100, and I'll try to guess it.");
-            bottomNumber = 1;
-            topNumber = 100;
-            middleNumber = 0;
-        }
-        */
-        
-    }
-        
-    alert("Yay. I win.");        
-    
 </script>
-
-
-<body>
-</body>
-
-/*
-    Task
-    Create a web page with an embedded JavaScript program that plays the “number guessing game” with the user as follows:
-
-    The user thinks of an integer between 1 and 100 (inclusive).
-    The program needs to repeatedly take guesses at the number the user has in mind.
-    To each of the program’s guesses, the user responds “<” if the target number is less than the program’s guess; “>” if the target number is greater than the program’s guess; or “yes” if the program has guessed the number correctly.
-    You need to come up with and implement the most efficient strategy for your program.
-
-    Sample game
-    Your program (prompt box): Is your number 23?
-    User (enters into the prompt box): <
-    Your program: Is your number 1?
-    User: >
-    Your program (prompt box): Is your number 14?
-    User (enters into the prompt box): yes
-    Your program (alert box): I won!
-*/
