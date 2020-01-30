@@ -10,11 +10,14 @@ let solved = false;
 while (!solved) {
   let response = prompt("Is your number " + middleNumber + "? Answer yes, <, or >");
   if (response == "<") {
-    topNumber = middleNumber;
-    middleNumber = middleNumber / 2;    
+    topNumber = Math.round(middleNumber);
+    middleNumber = Math.round(middleNumber / 2);
   }
-  if (response == "yes") {
+  else if (response == "yes") {
     solved = true;
+  }
+  else {
+    alert("It seems like we're done here. Bye!");
   }
 }
 
