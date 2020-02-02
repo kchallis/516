@@ -6,11 +6,9 @@ let year = prompt("Gimmee a year, and I'll tell you if it's a leap year!");
 
 if (year < 1582) {
     alert("Eh, well, although it is possible to calculate the proleptic Gregorian calendar if you wanted to, I'm going to assume you really just want to know if the year is ACTUALLY a leap year, not if it would have been had the Gregorian calendar been in place yet. *HINT* The Gregorian calendar started to be a thing in 1582 in most, but not all, of Europe."); 
-} else if (year > 1582) {
-    if (year % 4 = 0) {
+} else if (year % 4 = 0) {
         alert("It's a leap year.");
-    }
-    else {
+} else if (year % 4 != 0 {
         alert("It's not a leap year.");
     }
 } else {
