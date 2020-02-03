@@ -2,14 +2,16 @@
 
 "use strict";
 
-let year = prompt("Gimmee a year, and I'll tell you if it's a leap year!");
+let year = Number(prompt("Gimmee a year, and I'll tell you if it's a leap year!"));
+
+let leapYear = false;
 
 if (year < 1582) {
     alert("Eh, well, I'm not going to calculate the proleptic Gregorian calendar. *HINT* The Gregorian calendar started to be a thing in 1582 in most, but not all, of Europe.");
 } else if (year % 4 != 0) {
     //why wouldn't you want to just make alerts for every scenario? Probably redundancy/eloquence?
-    let leapYear = false;
-    // do you have to declare your variables outside of if blocks?
+    leapYear = false;
+    // do you have to declare your variables outside of if blocks? "Variable undefined in strict mode"
 } else if (year % 100 != 0) {
     leapYear = true;
 } else if (year % 400 != 0) {
