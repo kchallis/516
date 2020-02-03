@@ -1,8 +1,8 @@
 <script>
 
 "use strict";
-
-let temp = prompt("Tell me your temperature, and I'll tell you if you have a fever or not.");
+/*
+let temp = prompt("Tell me your temperature in degrees F, and I'll tell you whether you have a fever or not.");
 
 if (temp == 100 || 101){
     alert("You have a low grade fever.");
@@ -25,5 +25,32 @@ else if (temp <= 99 && temp >= 96) {
 else {
     alert("Hmm, I don't know what's wrong with you. Sorry.");
 }
+*/
+
+let temp = prompt("Tell me your temperature in degrees F and I'll tell you whether or not you have a fever");
+
+let lowGrade = temp == 100 || 101;
+let medGrade = temp == 102;
+let highGrade = temp == 103 || 104;
+let burningUp = temp >= 105;
+let noFever = temp <= 99 && temp >= 96;
+let dead = temp <= 95;
+
+if (temp == lowgrade){
+  alert("You have a low-grade fever.");
+} else if (temp == medGrade){
+  alert("You have an intermediate-grade fever.");
+} else if (temp == highGrade){
+  alert("You have a high-grade fever.");
+} else if (temp == burningUp){
+  alert("Get to a hospital!");
+} else if (temp == noFever){
+  alert("You don't have a fever.");
+} else if (temp == dead){
+  alert("RIP, friend.");
+} else {
+  alert ("Something's gone wrong here.");
+}
+
 
 </script>
