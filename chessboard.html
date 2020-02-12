@@ -2,6 +2,7 @@
 
 "use strict";
 
+/*
 let line = 1
 let square = " ";
 
@@ -12,6 +13,23 @@ while (line == 1) {
     line += 1;
   }
 }
+*/
+
+for (let i = 0; i < 8; i++){
+  let myCurrentRow = "";
+  for (let j = 0; j < 8; j++){
+    myCurrentRow += "#";
+    if (i % 2) === j % 2){
+      myCurrentRow += " ";
+    } else {
+      myCurrentRow += "#";
+    }
+  }
+  console.log(myCurrentRow);
+}
+
+//nested loops are like grading quizzes, or like
+
 
 // somewhere in here there is an infinite loop, but I don't see it!
 </script>
