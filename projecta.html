@@ -16,7 +16,12 @@
       alert("I win! Game over");
       playing = false;
     } else {
-      alert("Something's wrong here.");
+      quit = confirm("Something's wrong here. Do you still want to play?");
+        if (quit) {
+          playing = false;
+        } else {
+          playing = true;
+        }
     }
   }
 
