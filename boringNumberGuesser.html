@@ -1,0 +1,36 @@
+<script type="text/javascript">
+
+  "use strict";
+
+  let number = parseFloat(prompt("If you give me a number, I'll tell you about it!"));
+  let evenOdd = "I don't know whether your number is even or odd.";
+  let posNeg = "I don't know whether your number is positive or negative.";
+  let intFloat = "I don't know whether your number is an integer or not.";
+
+  if (number % 2 == 0) {
+    evenOdd = "even";
+  } else {
+    evenOdd = "odd";
+  }
+
+  if (Number.isInteger(number)){
+    intFloat = "an integer.";
+  } else {
+    intFloat = "not an integer.";
+  }
+
+  if (number > 0) {
+    posNeg = "positive.";
+  } else if (number < 0) {
+    posNeg = "negative.";
+  } else {
+    posNeg = "neither positive nor negative. It's zero.";
+  }
+
+
+
+
+  alert("You have an " + evenOdd + " number that is " + posNeg + " Your number is also " + intFloat);
+
+
+</script>

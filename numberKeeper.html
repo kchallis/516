@@ -1,0 +1,21 @@
+<script type="text/javascript">
+
+  "use strict";
+
+  let numberKeeper = parseFloat(prompt("How much d'ya got?"));
+
+
+  while (parseFloat(numberKeeper)) {
+    numberKeeper = numberKeeper + parseFloat((prompt("Ya got " + numberKeeper + ". Gimmee more and I'll add it to whatcha got!")));
+  }
+
+  numberKeeper = prompt("Nice try. That wasn't a number. D'ya wanna play again?");
+  if (numberKeeper == "yes") {
+    alert("Then you should reload the page.");
+  } else {
+    alert("Me neither, actually. That was tedious.");
+  }
+
+
+
+</script>
