@@ -1,0 +1,23 @@
+<script>
+
+  function is_heap_of_sand(number_of_grains){
+    if (number_of_grains === 1){
+      return false;
+    }
+    if (number_of_grains !== 1){
+      return is_heap_of_sand(number_of_grains - 1);
+    }
+  }
+
+alert(is_heap_of_sand(100));
+
+//This is a ridiculous example but it is the easiest example of recursion, and now we can look at stack overflow.
+//When a function is called, JS needs to remember the caller so it knows where to go back after the function is done.
+// The computer is fine with looking up several things in a row, but at some point, the dedicated
+// and set aside for going back to the beginning, gets called so many times.
+// "A very bad dictionary"
+// How do you know where to return back to continue executing the rest of the code.
+// Whatever you do with recursion you can do in a while loops
+// Recursion is a nice tool in programming when used thoughtfully.
+
+</script>

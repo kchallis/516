@@ -4,7 +4,6 @@
   let topNumber = 100;
   let playing = true;
 
-
   while (playing) {
     let middleNumber = Math.floor((bottomNumber + topNumber)/2);
     let response = (prompt("Is your number " + middleNumber + "?"));
@@ -16,11 +15,9 @@
       alert("I win! Game over");
       playing = false;
     } else {
-      quit = confirm("Something's wrong here. Do you still want to play?");
-        if (quit) {
+      playing = confirm("Something's wrong here. Do you still want to play?");
+        if (!playing) {
           playing = false;
-        } else {
-          playing = true;
         }
     }
   }
