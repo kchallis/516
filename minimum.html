@@ -10,10 +10,16 @@ console.log(min(0, -10));
 // → -10
 */
 
-let numberOne = prompt("Give me the first number.");
-let numberTwo = prompt("Give me the second number.")
+const min = function(numberOne, numberTwo){
+  let minimumNumber;
+  if (numberOne < numberTwo) {
+    minimumNumber = numberOne;
+  } else {
+    minimumNumber = numberTwo;
+  }
+  return console.log(minimumNumber);
+}
 
-let is_minimum = function(numberOne, numberTwo){
 /*
   let minimum = Math.min(numberOne, numberTwo);
   return minimum;
@@ -21,7 +27,7 @@ let is_minimum = function(numberOne, numberTwo){
 */
 
 
-  }
+
 
 
 
