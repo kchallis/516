@@ -1,0 +1,49 @@
+<script>
+
+  "use strict";
+/*
+  const isEven = function(a){
+    if (a > 0) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  We’ve seen that % (the remainder operator) can be used to test whether a number is even or odd by using % 2 to see whether it’s divisible by two. Here’s another way to define whether a positive whole number is even or odd:
+
+  Zero is even.
+
+  One is odd.
+
+  For any other number N, its evenness is the same as N - 2.
+
+  Define a recursive function isEven corresponding to this description. The function should accept a single parameter (a positive, whole number) and return a Boolean.
+
+  */
+
+  const isEven = function(posInteger){
+    if (posInteger == 0) {
+      return true;
+    } else if (posInteger == 1) {
+      return false;
+    } else if (posInteger < 0 ){
+      throw new Error("Hey, that's not a positive integer, buddy.");
+    } else if (!Number.isInteger(posInteger)) {
+      throw new Error("Hey, stupid, that's not a positive integer.");
+    } else {
+      return isEven(posInteger - 2);
+    }
+  }
+
+
+// we could either change the expectations
+// or we could return false (like I did...)
+// or we could give an error...
+
+
+
+
+
+
+</script>

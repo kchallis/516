@@ -1,0 +1,19 @@
+<script>
+
+  const isEven = function(anyInteger){
+    if (!Number.isInteger(anyInteger)){
+      throw new Error("Hey")
+    } else if (anyInteger < 0) {
+      return isEven(anyInteger * -1);
+    } else if (anyInteger == 0) {
+      return true;
+    } else if (anyInteger == 1) {
+      return false;
+    } else {
+      return isEven(posInteger - 2);
+    }
+  }
+
+
+
+</script>
