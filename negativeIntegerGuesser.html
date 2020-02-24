@@ -2,7 +2,7 @@
 
   const isEven = function(anyInteger){
     if (!Number.isInteger(anyInteger)){
-      throw new Error("Hey")
+      throw new Error("Hey, that's not an integer.")
     } else if (anyInteger < 0) {
       return isEven(anyInteger * -1);
     } else if (anyInteger == 0) {
@@ -10,7 +10,7 @@
     } else if (anyInteger == 1) {
       return false;
     } else {
-      return isEven(posInteger - 2);
+      return isEven(anyInteger - 2);
     }
   }
 

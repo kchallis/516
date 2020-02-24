@@ -1,0 +1,17 @@
+<script>
+
+
+numberOfBs = countBs(prompt("Give me a word and I'll tell you how many B's it has."));
+
+function countBs(string){
+  let numberOfBs = 0;
+  for (let positionInString = 0; positionInString <= (string.length - 1); positionInString++){
+    if (string[positionInString] == "B") {
+      numberOfBs++;
+    } else {
+      //alert("Hey! Something's wrong!");
+    }
+  }
+  alert(numberOfBs);
+}
+</script>
