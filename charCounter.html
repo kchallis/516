@@ -1,0 +1,18 @@
+<script>
+
+
+countChar(prompt("Give me a word and I'll count a character of your choice."));
+
+function countChar(string, whateverChar){
+  let numberOfChar = 0;
+  whateverChar = prompt("What character do you want me to count?");
+  for (let positionInString = 0; positionInString <= (string.length - 1); positionInString++){
+    if (string[positionInString] == whateverChar) {
+      numberOfChar++;
+    } else {
+      //alert("Hey! Something's wrong!");
+    }
+  }
+  alert(numberOfChar);
+}
+</script>
