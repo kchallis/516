@@ -1,0 +1,50 @@
+<script>
+  function sqr (){
+    return x * x;
+  }
+
+  //variable x only exists inside the function
+
+  let sqr = function(x){
+    return x * x;
+  }
+
+  //The thing below is an "arrow" function. Evgeny recommends against using this.
+
+  let sqr = (x) => x *x;
+
+  // a procedure is a block of code that is executed. A function is a block that returns a value.
+  // in JS they are both functions, though.
+  // side effects are anything that isn't strictly computing.
+
+  // When you define a function, you might want to use const instead of let
+  // because that means you can't accidentally change the function to another type.
+  // For example, alert = ("...") redefined that
+  // let ...; var <-- this is an old relic of the past. Use let and const instead of var.
+
+  /*
+var x = 5;
+  while (x < 10) {
+    var x = 7;
+  }
+var creates a variable that's local to a function.
+
+let is confined to the curly brackets.
+
+There are use cases for redefining built in functions, like for example when he wants to make it so the
+program doesn't print everything.
+console.log = function(){
+
+}
+
+1 grain not a heap.
+n grains not a heap therefore (n+1) grains is not a heap.
+Take the value solved for problem n and then do the thing for n+1
+
+
+
+  */
+
+
+
+</script>

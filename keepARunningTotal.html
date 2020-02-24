@@ -1,11 +1,22 @@
 <script type="text/javascript">
 
-  let total = 0;
+  let playing = true;
 
-  while (total) {
-    let response = Number(prompt("Please enter a number"));
-    total += response;
-    alert("The running total is " + total);
+  while (playing) {
+    let total = 0;
+
+    while (true) {
+      let number = Number(prompt("Please enter a number"));
+      total += number;
+      if (total) {
+
+      }
+      alert("The running total is " + total);
+    }
+
+
   }
+
+  //use loops, don't use a go-to
 
 </script>
