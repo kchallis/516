@@ -1,0 +1,36 @@
+<script>
+  myNumber = prompt("Please give me a number.");
+
+    function isEven(a){
+      if (a == 0) {
+        return true;
+      } else if (a == 1) {
+        return false;
+      } else {
+        return isEven(a - 2);
+      }
+    }
+
+  alert(isEven(myNumber));
+
+  let a = Number(prompt("Please give me a number and I'll tell you if it's even."));
+  let solved = false;
+
+  while(!solved){
+    if (a == 0){
+      a = true;
+      solved = true;
+    } else if (a == 1) {
+      a = false;
+      solved = true;
+    } else {
+      a - 2;
+    }
+  }
+
+  alert(a);
+
+
+
+
+</script>
