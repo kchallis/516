@@ -15,8 +15,6 @@ for (var i = 0; i < string.length; i++) {
       char -= 26;
     } else if (char < 65) {
       char += 26;
-    } else {
-      //nothing - but I'm pretty sure it's important to always have an "else" at the end of a conditional block, right?
     }
   } else if (char >= 97 && char <= 122) { //lowercase
     shiftString(string);
@@ -24,12 +22,8 @@ for (var i = 0; i < string.length; i++) {
       char -= 26;
     } else if (char < 97) {
       char += 26;
-    } else {
-      //nothing
     }
-  } else {
-    //nothing
-  }
+  } 
   newString += String.fromCharCode(char);
 }
 alert(newString);

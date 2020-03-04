@@ -1,0 +1,19 @@
+<script>
+
+let translation = " ";
+let dict = {
+  "I" : "já",
+  "clever" : "šikovný",
+  "very" : "velmi",
+  "am" : "jsem"
+};
+while (translation) {
+  let word = prompt("Give me a word in English and maybe I'll tell you what it is in Czech.");
+  if (word in dict) {
+    alert(dict[word]);
+  } else {
+    translation = prompt("I don't know that one. What does \"" + word + "\" mean in Czech?");
+    dict[word] = translation;
+  }
+}
+</script>
