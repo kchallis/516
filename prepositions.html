@@ -21,7 +21,7 @@
     through : 0
   };
   const prepBank = {
-    over : ["It has been built ____ 15 million times.",
+    over : ["Hey diddle diddle, the cat and the fiddle. The cow jumped ____ the moon.",
     "Which state has jurisdiction ____ child support?",
     "It comprises four services ____ three days.",
     " ____ 4 kilometers of fish habitat was eliminated.",
@@ -35,21 +35,50 @@
     around : [
     "Such gossip has been ____ since 1990.",
     "There are many market myths ____ volatility.",
-    "The core teaching is based ____ lectures."
-    "This enclosed water tank was likely built ____ 1910."
+    "The core teaching is based ____ lectures.",
+    "This enclosed water tank was likely built ____ 1910.",
     "There is more uncertainty ____ every curve."],
     through : [
-    "He finished high school ____ independent study."
-    "The war progressed ____ three distinct stages."
-    "My family went ____ very rough times."
-    "The school teaches kindgergarten ____ eigth grade children."
-    "This is done partly ____ natural language processing."]
+    "He finished high school ____ independent study.",
+    "The war progressed ____ three distinct stages.",
+    "My family went ____ very rough times.",
+    "The school teaches kindgergarten ____ eigth grade children.",
+    "This is done partly ____ natural language processing.",]
   };
 
 
+  let prepBankArray = Object.keys(prepBank);
+  alert(prepBankArray);
+
+  let randomNumber = Math.random();
+  alert(randomNumber);
+
+  let prepBankIndex = Math.floor(Math.random() * prepBankArray.length);
+  alert(prepBankIndex);
+
+  let randomKey = prepBankArray[prepBankIndex];
+  alert(randomKey);
+
+  let randomValue = prepBank[randomKey];
+  alert(randomValue);
+
+  //randomKey.[]
+
+  //let promptSentenceIndex = Math.floor(Math.random() *randomKey.length);
+  //alert(promptSentenceIndex);
+
+  let promptSentence = randomValue.[promptSentenceIndex];
+  alert(promptSentence);
+
+  let response = prompt(promptSentence + "\nChoose the correct preposition: over, under, around, through");
 
 
 
-  */
+  if (response != randomValue) {
+    promptSentence = promptSentence.replace("____", "over");
+    alert("Oops! The correct answer was:\n" + promptSentence); //I tried to use str.bold() but it didn't work in an alert box. It seems like I have to use a custom alert box to make that work.
+  }
+
+
 
 </script>
