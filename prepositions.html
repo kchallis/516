@@ -1,0 +1,55 @@
+<script>
+
+  /*
+  infinite loop :
+    1. figure out the target (worst) preposition
+    2. select a random sentence with the worst preposition
+    3. present to user, prompt user to fill the blank
+    4. Tell the user if they're right or wrong
+    5. If they're wrong, show them the sentence with the target sentence using string.replace, which replaces " ____ "
+    6. The user's score gets added to the prepScore
+
+
+  */
+
+  Math.random() //takes no arguments, returns a pseudorandom number between 0-1
+
+  let prepScore = {
+    over : 0,
+    under : 0,
+    around : 0,
+    through : 0
+  };
+  const prepBank = {
+    over : ["It has been built ____ 15 million times.",
+    "Which state has jurisdiction ____ child support?",
+    "It comprises four services ____ three days.",
+    " ____ 4 kilometers of fish habitat was eliminated.",
+    "The project has served 172 teachers ____ four years."],
+    under : [
+    "Three additional houses are currently ____ construction.",
+    "She was living ____ heavy police protection.",
+    "Parliamentary leaders were put ____ house arrest.",
+    "Children ____ 2 years old eat free.",
+    "Kidney removal is performed ____ general anesthesia."],
+    around : [
+    "Such gossip has been ____ since 1990.",
+    "There are many market myths ____ volatility.",
+    "The core teaching is based ____ lectures."
+    "This enclosed water tank was likely built ____ 1910."
+    "There is more uncertainty ____ every curve."],
+    through : [
+    "He finished high school ____ independent study."
+    "The war progressed ____ three distinct stages."
+    "My family went ____ very rough times."
+    "The school teaches kindgergarten ____ eigth grade children."
+    "This is done partly ____ natural language processing."]
+  };
+
+
+
+
+
+  */
+
+</script>

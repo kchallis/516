@@ -1,0 +1,49 @@
+<script>
+  let evgeny = {
+    fName : "Evgeny",
+    lName : "I'm not going to try",
+    age : 34,
+    gender : "male"
+  };
+  let brody = {
+    fName : "Brody",
+    lName : "Dingel",
+    age : 24,
+    gender : "male"
+  };
+  let jeanne = {
+    fName : "Jeanne",
+    lName : "Beck",
+    age : 34,
+    gender : "female"
+  };
+  /* can also be in-line nested structure. It is a little bit more common to use
+  this way; the other way is a bit redundant.
+  let directory = [{fName: "Evgeny", age: 34},{fName:"Brody"}]
+  */
+
+  let directory = [evgeny, brody];
+  let search = prompt("Enter your search.");
+
+/* This is how you could hard code it.
+  for(let k of directory) { //"of" is for arrays, "in" is for arrays - for(i in object) but for(i of array)
+    if (k.fName == search || k.lName == search || k.age == search || k.gender == search) {
+      alert(k.fName + " " + k.lName + " " + k.age + " " + k.gender);
+    }
+*/
+for(let k of directory){
+  let found = false;
+  for(let n in k){
+    if (k[n] == search){
+      found = true;
+      break;
+    }
+  }
+  if (found){
+    alert(k.fName + " " + k.lName + " " + k.age + " " + k.gender);
+  }
+
+
+}
+// make one more improvement : modify it so that you don't hardcode the alerts
+</script>
