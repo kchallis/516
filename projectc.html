@@ -14,32 +14,41 @@
     over : 0,
     under : 0,
     around : 0,
-    through : 0
+    through : 0,
+    without : 0,
   };
   const prepBank = {
-    over : ["Hey diddle diddle, the cat and the fiddle. The cow jumped ____ the moon.",
-    "Which state has jurisdiction ____ child support?",
-    "It comprises four services ____ three days.",
-    " Well ____ 4 kilometers of fish habitat was eliminated.",
-    "The project has served 172 teachers ____ four years."],
+    over : ["Everybody around the world is wondering when this terrible crisis will be ____.",
+    "When this is ____, I will go back to ISU for a PhD so I can get the higher ed experience I actually wanted.",
+    "It was a little ____ a week ago that life as we knew it was mostly normal.",
+    "Well ____ 2.2 million Americans may die from this pandemic.",
+    "It is absurd that President Trump actually believes this will be ____ in two weeks."],
     under : [
-    "Three additional houses are currently ____ construction.",
-    "She was living ____ heavy police protection.",
-    "Parliamentary leaders were put ____ house arrest.",
-    "Children ____ 2 years old eat free.",
-    "Kidney removal is performed ____ general anesthesia."],
+    "Fifteen additional people are ____ quarantine in Iowa.",
+    "If you feel ____ the weather, you should stay home!",
+    "ISU was forced to close and move to online instruction ____ these conditions.",
+    "I was ____ the impression that we had a good health care system, but apparently I was drastically wrong.",
+    "The reason why my kids' elementary school teachers were not allowed to contact me was because, ____ the current FAPE laws, it would have allegedly led to inequality in instruction."],
     around : [
-    "Such gossip has been ____ since 1990.",
-    "There are many market myths ____ volatility.",
-    "The core teaching is based ____ lectures.",
-    "This enclosed water tank was likely built ____ 1910.",
-    "There is more uncertainty ____ every curve."],
+    "If people from 1918 were still ____, they might have something interesting to say about our current situation.",
+    "Each infected person spreads the disease to ____ 2 or 3 new people.",
+    "I long to be ____ my fellow grad students and professors again, but it will probably not happen again for a long time.",
+    "I am worried that ____ 10 million people (or more!) worldwide will die.",
+    "Although Chinese authorities apologized to his family six weeks after he died from the virus, Li Wenliang was not around to recieve the justice he deserved for trying to alert the world to the dangers of covid-19."],
     through : [
-    "He finished high school ____ independent study.",
-    "The war progressed ____ three distinct stages.",
-    "My family went ____ very rough times.",
-    "The school teaches kindgergarten ____ eigth grade children.",
-    "This is done partly ____ natural language processing.",]
+    "The main things that help me ____ this terrible time are my faith, my family, and studying Czech online with my friends.",
+    "The days of paranoia about public health legislation and systematic global efforts are probably ____.",
+    "Someday I will tell my grandchildren about what I went ____ to try to make life normal and fun for my five children at home during covid-19.",
+    "I am grateful for Khan Academy and other EdTech jobs; it is ____ them that my children will gain the knowledge they need for the 2nd, 4th, and 5th grade standards.",
+    "Every morning I wake up hoping that this was all just some kind of sick dream, and not some huge global panic attack we are all currently going ____."],
+    without : [
+    "Italians are now completely ____ hope.",
+    "A bill ____ partisan climate change measures did not pass today, even though it would have helped millions of Americans.",
+    "There is no longer any state in the country ____ several dozen cases of the novel coronavirus.",
+    "If I cannot find a few minutes of time ____ my five children constantly needing my attention, I may go slightly insane.",
+    "I did not sign up for classes ____ real grades, so I'm really angry that ISU's grad school will move to a pass/fail basis.",
+    "The United States will suffer catastrophic losses ____ drastic and immediate draconian measures to increase social distancing."
+    ],
   };
   let giveCorrectSentence = function(sentence, randomKey){
     return sentence.replace("____", randomKey);
@@ -59,13 +68,13 @@ while (true) {
   let worstPrep = getWorstPreposition(prepScore);
   let prepSentences = prepBank[worstPrep];
   let promptSentence = prepSentences[Math.floor(Math.random() * prepSentences.length)];
-  let response = prompt(promptSentence + "\nChoose the correct preposition: over, under, around, through");
+  let response = prompt(promptSentence);
   if (response != worstPrep) {
     prepScore[worstPrep] -= 1;
-    alert("Oops! The correct answer is:\n" + giveCorrectSentence(promptSentence, worstPrep)); //I tried to use str.bold() but it didn't work in an alert box. It seems like I have to use a custom alert box to make that work.
+    alert(giveCorrectSentence(promptSentence, worstPrep)); //I tried to use str.bold() but it didn't work in an alert box. It seems like I have to use a custom alert box to make that work.
   } else {
     prepScore[worstPrep] += 1;
-    alert("You're right! The correct answer is: \"" + worstPrep + "\"\n" + giveCorrectSentence(promptSentence, worstPrep) +"\nGreat job!");
+    alert("Correct!");
   }
 }
 </script>
