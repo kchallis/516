@@ -1,0 +1,134 @@
+<html>
+<head>
+  <style>
+    .dot {
+      position: absolute;
+      height: 5px;
+      width: 5px;
+      background-color: black;
+      border-radius: 50%;
+    }
+    .sick {
+      background-color: red;
+    }
+    .recovered {
+      background-color: green;
+    }
+    .column {
+      position: absolute;
+      width: 1px;
+      background: red;
+    }
+  </style>
+</head>
+<body>
+
+<script>
+
+//knobs you can turn
+
+const
+  worldSize = 1000,
+  nPeople = 500,
+  maxSpeed = 8, //pixels per tick
+  recoveryTime = 50, //ticks
+  infectionRadius = 25; //pixels
+
+let people = [];
+let tick = 0;
+
+function createWorld() {
+  for (let i = 0; i < nPeople; i++) {
+    let person = {
+      x: Math.random() * worldSize,
+      y: Math.random() * worldSize,
+      speedX: maxSpeed * 2 * (Math.random() - 0.5), //why is it *2 here?
+      speedY: maxSpeed * 2 * (Math.random() - 0.5),
+      exposedAt: 0
+    };
+    person.el = document.createElement("div");
+    person.el.className = "dot";
+    document.body.appendChild(person.el);
+    people.push(person);
+  }
+}
+
+function drawWorld() {
+  let activeCases = 0;
+  for (let person of people) {    //spaghetti1
+    person.el.style.left = parseInt(person.x) + "px";
+    person.el.style.top = parseInt(person.y) + "px";
+    if (person.exposedAt > 0 && tick > person.exposedAt + recoveryTime) {
+      person.el.classList.remove('sick');
+      person.el.classList.add('recovered');
+    } else if (person.exposedAt > 0) {
+      person.el.classList.add('sick');
+    }
+    if (person.exposedAt > 0 && tick <= person.exposedAt + recoveryTime) { //spaghetti2
+      activeCases++;
+    }
+  }
+  let column = document.createElement("div"); //why are we using "" instead of '' here?
+  column.className = "column";
+  column.style.left = tick+"px";
+  column.style.height = activeCases+"px"; //why no spaces between things here?
+  column.style.top = (worldSize + nPeople - activeCases + 10)+"px";
+  document.body.appendChild(column);
+}
+
+function movePeople() {
+  tick++;
+  for (let person of people) {    //spaghetti1
+    person.x += person.speedX;
+    person.y += person.speedY;
+
+    // make sure everyone stays within the boundaries of the world
+
+    if (person.x < 0) {
+      person.x = 0;
+      person.speedX = -person.speedX;
+    }
+    if (person.y < 0) {
+      person.y = 0;
+      person.speedY = -person.speedY;
+    }
+    if (person.x > worldSize) {
+      person.x = worldSize;
+      person.speedX = -person.speedX;
+    }
+    if (person.y > worldSize) {
+      person.y = worldSize;
+      person.speedY = -person.speedY;
+    }
+
+    // get people sick
+
+    if (person.exposedAt > 0 && tick <= person.exposedAt + recoveryTime) { // spaghetti2
+      for (let person2 of people) {
+          if (person2.exposedAt === 0) {
+            let distance = Math.sqrt((person.x - person2.x) ** 2 + (person.y - person2.y) ** 2); // Cartesian distance, basic geometry
+            if (distance <= infectionRadius) {
+              person2.exposedAt = tick; //I was just thinking that it would be interesting to plot a graph of this.
+              person2.speedX = 0;
+              person2.speedY = 0;
+            }
+          }
+        }
+      }
+    }
+  }
+
+createWorld();
+people[0].exposedAt = 1;
+
+setInterval(function() { //wow, you can do that?! Define a function inside a parameter of another function?
+  movePeople();
+  drawWorld();
+}, 100);
+
+
+
+</script>
+
+</body>
+</html>
