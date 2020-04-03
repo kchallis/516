@@ -32,6 +32,7 @@ let nPeople = prompt("How many people are in the world? 50 = a few, 500 = a lot"
 let maxSpeed = prompt("How fast are the people moving? 2 = trudging along, 10 = sprinting"); //pixels per tick
 let recoveryTime = prompt("How long does it take to recover? 10 = very quickly, 100 = very slowly"); //ticks
 let infectionRadius = prompt("How contagious is the disease? 10 = not very, 50 = very"); //pixels
+let percentShelteredInPlace = prompt("What percent of people in this world follow the orders to shelter in place? Enter a number 1-100.")
 
 let people = [];
 let tick = 0;
@@ -55,7 +56,7 @@ function createWorld() {
       speedY: maxSpeed * 2 * (Math.random() - 0.5),
       exposedAt: 0
     };
-    if (i < nPeople * .75){
+    if (i < nPeople * (percentShelteredInPlace * .1){
       person.speedX = 0;
       person.speedY = 0;
     }
