@@ -93,24 +93,26 @@ function drawWorld() {
 function movePeople() {
   tick++;
   for (let person of people) {    //spaghetti1
-    person.x += person.speedX;
-    person.y += person.speedY;
-    // make sure everyone stays within the boundaries of the world
-    if (person.x < 0) {
-      person.x = 0;
-      person.speedX = -person.speedX;
-    }
-    if (person.y < 0) {
-      person.y = 0;
-      person.speedY = -person.speedY;
-    }
-    if (person.x > worldSize) {
-      person.x = worldSize;
-      person.speedX = -person.speedX;
-    }
-    if (person.y > worldSize) {
-      person.y = worldSize;
-      person.speedY = -person.speedY;
+    if (personStatus(person) !== 'sick'){
+      person.x += person.speedX;
+      person.y += person.speedY;
+      // make sure everyone stays within the boundaries of the world
+      if (person.x < 0) {
+        person.x = 0;
+        person.speedX = -person.speedX;
+      }
+      if (person.y < 0) {
+        person.y = 0;
+        person.speedY = -person.speedY;
+      }
+      if (person.x > worldSize) {
+        person.x = worldSize;
+        person.speedX = -person.speedX;
+      }
+      if (person.y > worldSize) {
+        person.y = worldSize;
+        person.speedY = -person.speedY;
+      }
     }
     // get people sick
 
