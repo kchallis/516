@@ -1,0 +1,71 @@
+<p>Input:<br><textarea id="input" rows="10" cols="80"></textarea>
+<p><button onclick="process()">Process</button>
+<p>Output:<br><textarea id="output" rows="10" cols="80"></textarea>
+
+<script>
+
+/*
+
+Removes punctuation and extra white space.
+Casts all words to the upper case.
+Counts the number of tokens and types in the text.
+Displays a frequency dictionary of the types found in the text, sorted by descending frequency.
+Calculates and displays the type/token ratio.
+Please use this boilerplate file to assist you with the development of the user interface for this program.
+
+Grading (5 points total)
+Your program is syntactically correct: 1 point.
+Your program follows formatting guidelines: 1 point.
+Your program displays the frequency dictionary correctly: 2 points.
+Your program calculates and displays TTR correctly: 1 point.
+*/
+
+
+// this function will be invoked when the button is clicked
+function process() {
+
+  // get input text, put it in the variable "x"
+  let x = document.getElementById("input").value;
+  let allTheWords = x.toUpperCase();
+  allTheWords = allTheWords.replace(/\W+/g," ");
+
+  let wordList = allTheWords.match(/\b\w+\b/g);
+  let numberOfTokens = wordList.length;
+
+  function TokenCount(wordList) {
+    var uniqueWords = {};
+    for (var i = 0; i < wordList.length; i++) {
+      var key = wordList[i];
+      if (uniqueWords.hasOwnProperty(key)) {
+        uniqueWords[key]++;
+      } else {
+        uniqueWords[key] = 1;
+      }
+    }
+    return uniqueWords;
+  }
+
+  uniqueWords = TokenCount(wordList);
+
+  var y = "";
+  var maxValue = 0;
+  var maxWord = "";
+  while (Object.keys(uniqueWords).length > 0) {
+    for (var key of Object.keys(uniqueWords)) {
+      let count = uniqueWords[key];
+      if (count > maxValue) {
+        maxValue = count;
+        maxWord = key;
+      }
+    }
+    delete uniqueWords[maxWord];
+    y = y + maxWord + ": " + maxValue.toString() + "\n";
+    maxValue = 0;
+  }
+  // do some processing
+  // replace this line with what you need to do for the assignment
+  // populate the output text box with the value of the variable "y"
+  document.getElementById("output").value = y;
+}
+
+</script>

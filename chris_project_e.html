@@ -1,0 +1,85 @@
+<p>Input:<br><textarea id="input" rows="10" cols="80"></textarea>
+<p><button onclick="process()">Process</button>
+<p>Output:<br><textarea id="output" rows="10" cols="80"></textarea>
+
+<script>
+  var counts = {};
+  var keys = [];
+    // this function will be invoked when the button is clicked
+  function process() {
+
+    // get input text, put it in the variable "x"
+    let x = document.getElementById("input").value;
+
+    // do some processing
+    // replace this line with what you need to do for the assignment
+    let allWords = x;
+    let tokens = allwords.split(/\W+/);
+    alert(tokens);
+    let types = 0
+    let tokens2 = 0;
+    for (var i = 0; i < tokens.length; i++) {
+      var word = tokens[i].toLowerCase();
+    }
+
+    if (!/\d+/.test(word)) {
+      if (counts[word] == undefined) {
+        counts[word] = 1;
+        keys.push(word);
+        types += 1;
+        tokens2 += 1;
+      } else {
+        counts[word] = counts[word] + 1;
+        tokens2 += 1;
+      }
+    }
+    alert("the types are " + types);
+    alert("the tokens are" + tokens2);
+    keys.sort(compare);
+
+    funciton compare (a, b){
+      var countA = counts[a];
+      var countB = counts[b];
+      return countB - countA;
+    }
+    for (var i = 0; i < keys.length; i++) {
+      var key = keys[i];
+      alert(key + " " + counts[key]);
+    }
+    var typeTokenRatio = types / tokens2;
+    alert("the type token ratio is " + typeTokenRatio);
+
+    var y =
+      "Types: " +
+      types +
+      "; Tokens: " +
+      tokens2 +
+      "; TTR: " +
+      typeTokenRatio.toFixed(2) +
+      "; Keys in order of frequency: " +
+      keys;
+    document.getElementById("output".value = y);
+
+  }
+
+/*
+var tokens = allWords.split(/\W+/);
+console.log(tokens);
+var types = 0;
+var tokens2 = 0;
+for (var i = 0; i < tokens.length; i++) {
+  var word = tokens[i].toLowerCase();
+  if (!/\d+/.test(word)) {
+    if (counts[word] == undefined) {
+      counts[word] = 1;
+      keys.push(word);
+      types += 1;
+    } else {
+      counts[word] = counts[word] + 1;
+      tokens2 += 1;
+    }
+  }
+}
+*/
+
+</script>

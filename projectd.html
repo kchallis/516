@@ -1,18 +1,18 @@
-<script>
 
 let myString = prompt("Please enter a sentence.");
 let replacedString = myString.replace(/([aeiouyAEIOUY]+)/g, "aig$1");
 replacedString = replacedString.replace(/(([aeiouyAEIOUY])([qwrtpsdfghjklzxcvbnm]+)(aig)([e]))\b/g, "$2$3$5");
-replacedString = replacedString.replace(/\b(aig)(I)\b/g, "$1i");
-replacedString = replacedString.replace(/(\b[(.|!)]\s)(a)(ig)/g, "$1A$3");
-replacedString = replacedString.replace(/\b(aig)(A)\b/g, "$1a");
-replacedString = replacedString.replace(/\b^(a)(ig)/g, "A$2");
-replacedString = replacedString.replace(/(Aig)(A)/g, "$1a");
-replacedString = replacedString.replace(/(Aig)(E)/g, "$1e");
-replacedString = replacedString.replace(/(Aig)(I)/g, "$1i");
-replacedString = replacedString.replace(/(Aig)(O)/g, "$1o");
-replacedString = replacedString.replace(/(Aig)(U)/g, "$1u");
-replacedString = replacedString.replace(/(Aig)(Y)/g, "$1y");
+<script>
+replacedString = replacedString.replace(/\b(aig)(I)\b/g, "$1i")
+.replace(/(\b[(.|!)]\s)(a)(ig)/g, "$1A$3")
+.replace(/\b(aig)(A)\b/g, "$1a")
+.replace(/\b^(a)(ig)/g, "A$2")
+.replace(/(Aig)(A)/g, "$1a")
+.replace(/(Aig)(E)/g, "$1e")
+.replace(/(Aig)(I)/g, "$1i")
+.replace(/(Aig)(O)/g, "$1o")
+.replace(/(Aig)(U)/g, "$1u")
+.replace(/(Aig)(Y)/g, "$1y");
 
 alert(replacedString);
 
